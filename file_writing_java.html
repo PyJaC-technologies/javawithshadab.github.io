@@ -9,6 +9,8 @@
 <meta name="author" content="">
 <link rel="icon" href="images/favicon.ico">
 
+<link rel="stylesheet" href="highlighter/prettify.css" />
+
 <title>Projects List</title>
 
 <!-- Bootstrap core CSS -->
@@ -61,7 +63,7 @@ In this tutorial We will learn how to use BufferedWriter, PrintWriter, FileOutpu
 
 Let's start by using BufferedWriter to write a String to a new file: 
 
-<pre>
+<pre class="prettyprint">
     <code >
 import java.io.BufferedWriter;
 import java.io.File;
@@ -103,7 +105,7 @@ Difference between FileWriter and BufferedWriter:
 The FileWriter writes the characters one by one and the BufferedWriter first buffers it to the memory and writes it once.
 In above program, if file is already existing, then whole content of a file will have removed and fresh content will be write on that file, means we lost existing data. So what if we want to keep old data and write some more data on same file? Here is the solution:
 We can then append a String to the existing file.
-<pre>
+<pre class="prettyprint">
     <code >
 import java.io.BufferedWriter;
 import java.io.File;
@@ -150,7 +152,7 @@ We pass an extra boolean parameter, it tells to the FileWriter for append mode. 
 <h2> 2. How to write data into file using PrintWriter </h2>
 Next - let's see how we can use a PrintWriter to write formatted text to a file:
 
-<pre>
+<pre class="prettyprint">
     <code >
 import java.io.File;
 import java.io.FileWriter;
@@ -195,7 +197,7 @@ Difference between FileWriter and PrintWriter:
 <h2>3. How to write data into file using FileOutputStream</h2>
 We can use FileOutputStream to write binary data to a file. The following code converts a String int bytes and writes the bytes to file using a FileOutputStream:
 
-<pre>
+<pre class="prettyprint">
     <code >
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -226,7 +228,7 @@ The output in the file will of course be:<br>
 Java DataOutputStream class allows an application to write primitive Java data types to the output stream in a machine-independent way.
 Next - let's take a look at how we can use a DataOutputStream to write a String to file:
 
-<pre>
+<pre class="prettyprint">
     <code >
 import java.io.DataOutputStream;
 import java.io.FileOutputStream;
@@ -260,7 +262,7 @@ ObjectOutputStream can write any object type was well as primitives. It is less 
 ObjectOutputStream in Java can be used to convert an object to OutputStream. The process of converting object to stream is called serialization in java.
 Once an object is converted to Output Stream, it can be saved to file or database, send over the network or used in socket connections. So, we can use FileOutputStream to write Object to file.
 
-<pre>
+<pre class="prettyprint">
     <code >
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -327,7 +329,7 @@ The output in the file will of course be:<br>
 Java also allows you to access the contents of a file in random order i.e. data items can be read and written in any order. Simply put - we need random access.
 RandomAccessFile enable us to write at a specific position in the file given the offset - from the beginning of the file - in bytes. The following code writes an integer value with offset given from the beginning of the file:
 
-<pre>
+<pre class="prettyprint">
     <code >
 import java.io.IOException;
 import java.io.RandomAccessFile;
@@ -361,7 +363,7 @@ If you are dealing with large files, FileChannel can be faster than standard IO.
 <h2>8. How to write data into file using Java 7?</h2>
 Java 7+ users can use the Files class to write to files:
 
-<pre>
+<pre class="prettyprint">
     <code >
 import java.io.IOException;
 import java.nio.charset.Charset;
@@ -399,7 +401,7 @@ The output in the file will of course be:<br>
 
 <h2>9. How to write data into file using Java 8?</h2>
 Reading text files into memory and writing strings into a text file in Java 8 is finally a simple task. No messing around with readers and writers. The method Files.readAllLines reads all lines of a given file into a list of strings. You can simply modify this list and write the lines into another file via Files.write:
-<pre>
+<pre class="prettyprint">
     <code >
 import java.io.IOException;
 import java.nio.file.Files;
@@ -443,7 +445,7 @@ b.	createTempFile(String prefix, String suffix)
 If suffix is null, “.tmp” suffix is used. If directory is null, then temp file is created in operating system temp directory.
 See below code is code, everything is same as above approaches except the way of creating file.
 
-<pre>
+<pre class="prettyprint">
     <code >
 import java.io.BufferedWriter;
 import java.io.File;
@@ -542,5 +544,8 @@ In output stream, the close () method calls flush () before releasing the resour
 
 	<!-- Latest compiled JavaScript -->
 	<script src="js/bootstrap.js"></script>
+	
+	<script src="highlighter/prettify.js"></script>
+<script>prettyPrint();</script>
 </body>
 </html>
